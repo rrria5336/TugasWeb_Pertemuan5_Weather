@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App — Tugas Rutin 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌤️ Weather App</h1>
+        <p class="subtitle">Cek cuaca kotamu sekarang!</p>
+
+        <!--  Form Pencarian -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Ketik nama kota..."
+                autocomplete="off"
+            />
+            <button id="searchBtn">🔍 Cari</button>
+        </div>
+
+        <!-- 🌡️ Toggle °C / °F -->
+        <div class="toggle-box">
+            <button id="unitToggleC" class="active">°C</button>
+            <button id="unitToggleF">°F</button>
+        </div>
+
+        <!--  Loading State -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Sedang mencari cuaca...</p>
+        </div>
+
+        <!--  Error Message -->
+        <div id="error" class="error hidden"></div>
+
+        <!-- ️ Hasil Cuaca Sekarang -->
+        <div id="weatherResult" class="weather-card hidden">
+            <div class="weather-header">
+                <h2 id="cityName">—</h2>
+                <p id="country">—</p>
+            </div>
+            <img id="weatherIcon" src="" alt="weather icon" />
+            <p id="temperature" class="temperature">—°C</p>
+            <p id="description" class="description">—</p>
+            <div class="details">
+                <p>💧 Kelembaban: <span id="humidity">—</span>%</p>
+                <p>🌡️ Terasa seperti: <span id="feelsLike">—</span>°C</p>
+                <p>💨 Angin: <span id="wind">—</span> m/s</p>
+            </div>
+        </div>
+
+        <!-- 🌥️ PERKIRAAN 6 JAM KE DEPAN -->
+        <div id="forecastSection" class="forecast-section hidden">
+            <h3>🌥️ Perkiraan 6 Jam ke Depan</h3>
+            <div id="forecastList" class="forecast-list"></div>
+        </div>
+
+        <!-- 📜 Riwayat Pencarian (Bonus) -->
+        <div id="historySection" class="history-section hidden">
+            <h3>📜 Riwayat Pencarian</h3>
+            <ul id="historyList"></ul>
+            <button id="clearHistory">🗑️ Hapus Riwayat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
